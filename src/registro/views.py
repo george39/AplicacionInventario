@@ -96,7 +96,7 @@ class ReportePersonasPDF(View):
 
     def tabla(self,pdf,y):
         #Creamos una tupla de encabezados para neustra tabla
-        encabezados = ('Id registro', 'Id producto', 'Nombre registro', 'Cantidad registro', 'Fecha registro')
+        encabezados = ('Id registro', 'Id producto', 'Nombre registro', 'Cantidad registro', 'Fecha grabado')
         #Creamos una lista de tuplas que van a contener a los registros
         detalles = [(registro.id_registro, registro.id_producto, registro.nombre_registro, registro.cantidad_registro, registro.fecha_registro) for registro in Registro.objects.all()]
         #Establecemos el tamaño de cada una de las columnas de la tabla
