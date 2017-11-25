@@ -1,0 +1,21 @@
+{% extends 'base/base.html' %}
+
+
+{% block content %}
+<form class="navbar-search pull-left" action="registro/listarcompra"  name="buscalo">
+              <input class="search-query" name="buscalo" type="text" placeholder="Buscar" aria-label="Search">
+              {% csrf_token %}
+              <button class="btn btn-outline-success " type="submit">Buscar</button>
+            </form>
+<form method="post">
+	
+	<h5>Formulario para registro de salidas</h5>
+	{% csrf_token %}
+	{{ form.as_p}}
+	<button type="submit">Guardar</button>
+	
+	
+</form>
+
+
+{% endblock %}

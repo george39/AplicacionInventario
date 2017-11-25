@@ -1,0 +1,40 @@
+{% extends 'base/base.html' %}
+{% block content %}
+
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			
+			<td>Id registro</td>
+			<td>Id producto</td>
+			<td>Nombre</td>
+			<td>Cantidad</td>
+			<td>Fecha grabado</td>
+
+		</tr>
+	</thead>
+	<tbody>
+		{% if object_list %}
+		{% for registro in object_list %}
+		<tr>
+			<td>{{ registro.id_registro }}</td>
+			<td>{{ registro.id_producto }}</td>
+			<td>{{ registro.nombre_registro }}</td>
+			<td>{{ registro.cantidad_registro }}</td>
+			<td>{{ registro.fecha_registro }}</td>
+				<a class="btn btn-primary" href=""></a>
+				
+			
+			
+		</tr>
+		{% endfor %}
+		{% else %}
+		<h1>No hay registros</h1>
+		{% endif %}
+	</tbody>
+</table>
+<form method="post">
+<a href="pdf">Generar pdf</a>
+{% csrf_token %}
+</form>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base/base.html' %}
+{% block content %}
+
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			
+			<td>Codigo compra</td>
+			<td>Id producto</td>
+			<td>Nit proveedor</td>
+			<td>Cantidad</td>
+			<td>Valor compra</td>
+
+		</tr>
+	</thead>
+	<tbody>
+		{% if object_list %}
+		{% for registro in object_list %}
+		<tr>
+			<td>{{ registro.codigo_compra }}</td>
+			<td>{{ registro.id_producto }}</td>
+			<td>{{ registro.nit_proveedor }}</td>
+			<td>{{ registro.cantidad }}</td>
+			<td>{{ registro.valor_compra }}</td>
+				<a class="btn btn-primary" href=""></a>
+			
+			
+		</tr>
+		{% endfor %}
+		{% else %}
+		<h1>No hay registros</h1>
+		{% endif %}
+	</tbody>
+</table>
+
+{% endblock %}
